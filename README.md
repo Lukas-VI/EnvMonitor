@@ -17,7 +17,7 @@
 
 ```
 EnvMonitor/
-├─ .vscode/                      # VSCode 配置（不用改）
+├─ .vscode/                      # VSCode 配置
 │  ├─ tasks.json                 # 编译任务
 │  ├─ launch.json                # 调试配置
 │  └─ c_cpp_properties.json      # 头文件智能提示

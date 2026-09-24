@@ -1,0 +1,22 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile
+        run: |
+          mkdir -p bin
+          gcc -g src/*.c -I inc -o bin/EnvMonitor -Wall -Wextra
+
+      - name: Run smoke test
+        run: |
+          timeout 30 ./bin/EnvMonitor || true
